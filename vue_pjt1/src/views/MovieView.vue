@@ -25,7 +25,7 @@ export default {
   methods: {
     getMovieList() {
       this.buttonStatus = false
-      const movieURL = "http://www.json-generator.com/api/json/get/ceNyuXZmwi?indent=2"
+      const movieURL = "https://www.json-generator.com/api/json/get/ceNyuXZmwi?indent=2"
       axios.get(movieURL)
         .then(res => this.movies = res.data)
         .catch(err => console.error(err))

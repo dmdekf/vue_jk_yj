@@ -1,6 +1,6 @@
 <template>
   <div>
-    <input type="text" @keypress.enter="onInput">
+    <input type="text" @keypress.enter="onInput" class="mb-3">
     <button @click="onInput">검색</button>
   </div>
 </template>
@@ -11,6 +11,7 @@ export default {
   methods:{
     onInput(e) {
       this.$emit('input-change', e.target.value)
+      e.target.value = ''
     }
   }
 }

@@ -1,14 +1,21 @@
 <template>
-  <div>
+  <div class="container">
     <h1 class="mt-5">영화 예고편 검색</h1>
     <VideoSearch @input-change="onInputChange" />
-    <VideoItem/>
+    <div class="row">
+      <VideoItemDetail :video="video" />
+      <ul v-if="videos" class="list-group col-lg-4">
+        <VideoItem v-for="video in videos" :key="video.etag" :video="video" @video-select="onVideoSelect" />
+      </ul>
+    </div>
   </div>
 </template>
 
 <script>
 import VideoSearch from '../components/VideoSearch'
 import VideoItem from '../components/VideoItem'
+import VideoItemDetail from '../components/VideoItemDetail'
+
 import axios from 'axios'
 
 const API_KEY = process.env.VUE_APP_YOUTUBE_API_KEY
@@ -20,11 +27,13 @@ export default {
   components: {
     VideoSearch,
     VideoItem,
+    VideoItemDetail,
   },
   data() {
     return {
       inputValue: '',
-      Videos: null,
+      videos: null,
+      video: null,
     }
   },
   methods: {
@@ -35,7 +44,7 @@ export default {
           key: API_KEY,
           part: 'snippet',
           type: 'video',
-          q: this.inputValue,
+          q: this.inputValue + ' trailer',
         }
       })
         .then(res => {
@@ -45,9 +54,11 @@ export default {
             item.snippet.title = doc.body.innerText
           })
           this.videos = res.data.items
-          this.inputValue = ''
         })
         .catch(err => console.error(err))
+    },
+    onVideoSelect(video) {
+      this.video = video
     },
   },
 }
