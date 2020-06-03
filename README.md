@@ -1,6 +1,10 @@
 # jk_yj_movie
 
-# deploy
+### deploy-netlify
+
+[jk_yj_movie](https://distracted-perlman-f82b06.netlify.app/ )
+
+
 
 ### 목표
 
