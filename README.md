@@ -2,9 +2,17 @@
 
 ### deploy-netlify
 
-[jk_yj_movie](https://distracted-perlman-f82b06.netlify.app/ )
+[jk_yj_movie](https://distracted-perlman-f82b06.netlify.app/)
 
+## 프로젝트 구성
 
+1. Movie: 정해진 json파일을 받아와 영화 리스트를 화면에 나타낸다.
+
+- 선택된 영화의 경우 모달을 통해 상세정보를 보여준다.
+
+2. Video : Youtuve api를 통해 영화 예고편 정보를 화면에 나타낸다.
+
+- 선택된 비디오의 경우 동영상을 보여준다.
 
 ### 목표
 
@@ -83,3 +91,12 @@ $ npm i axios
   </body>
 </html>
 ```
+
+- 어려웠던 점
+
+1. modal 사용 시 id와 target값을 바인딩을 통해서 정해준다.
+2. id값은 숫자만 이용할 수 없다.
+3. videoitem과 videoitemdetail간의 관계에서 선택된 video를 데이터 값을 갱신하지 않고 보내줄 수 있는 방법이 무엇인지 알 수 없었음. => 동일한 자식 으로 동일선상에서 진행.
+4. 비디오의 경우 검색창에서 enter의 동작과 click의 동작 둘로 반응할 수 있는데 click의 경우 값의 전달을 어떻게 할 것인가...
+
+5. deploy시 모바일 에서 화면 구성도 생각해보기
