@@ -1,6 +1,6 @@
 <template>
   <div class="col-sm-3">
-    <div class="card p-3" style="width: 18rem;">
+    <div class="card p-3" style="width: 100;">
       <img :src="movie.poster_url" class="card-img-top" alt="Movie Poster" />
       <div class="card-body">
         <h5 class="card-title">{{ movie.title }}</h5>

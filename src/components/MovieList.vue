@@ -5,19 +5,18 @@
 </template>
 
 <script>
-import MovieListItem from '../components/MovieListItem'
+import MovieListItem from "../components/MovieListItem";
 
 export default {
-  name:'MovieList',
+  name: "MovieList",
   components: {
     MovieListItem
   },
   props: {
     movies: Array
-  },
-}
+  }
+};
 </script>
 
 <style>
-
 </style>
